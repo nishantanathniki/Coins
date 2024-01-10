@@ -6,8 +6,8 @@ from session import login
 from Data import data
 import random
 import os 
-print(os.getcwd())
-#session = login()
+
+
 
 keep_alive()
 
@@ -23,13 +23,14 @@ h = {
 l = []
 with open("allidtokens.txt","r")as rr:
   l = rr.read().split(",")
-#print(login())
-j = 0
+
+
+l = l[:len(l)-1]
+
+
 while(True):
-  for i in l:
-    if (j==30):
-      j=0
-    print("Account No ",j)
+  for v,i in enumerate(l):
+    print("Account No ",v)
     while(True):
       try:
         data1 = {"data" : ""}
@@ -45,6 +46,5 @@ while(True):
       
       except:
         print("Error")
-    j = j+1
   print("Sleeping For 6 Minutes")
   time.sleep(6*60)
